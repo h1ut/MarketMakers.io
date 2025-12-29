@@ -90,7 +90,10 @@ export interface SearchResult {
 }
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ?? "http://localhost:4000";
+  import.meta.env.VITE_API_BASE_URL ?? 
+  (import.meta.env.MODE === "production" 
+    ? "https://marketmakers-api.onrender.com" // замените на ваш Render URL
+    : "http://localhost:4000");
 
 async function apiGet<T>(path: string): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${path}`);

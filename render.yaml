@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: marketmakers-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: CORS_ORIGIN
+        sync: false # Set in Render dashboard
+      - key: STOCK_API_KEY
+        sync: false # Set in Render dashboard
+      - key: NEWS_API_KEY
+        sync: false # Set in Render dashboard
+      - key: GEMINI_API_KEY
+        sync: false # Set in Render dashboard
+
