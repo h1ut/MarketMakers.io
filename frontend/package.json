@@ -1,6 +1,7 @@
 {
   "name": "impact-investing-frontend",
   "homepage": "https://h1ut.github.io/MarketMakers.io",
+  "description": "AI-powered impact investing platform",
   "version": "1.0.0",
   "private": true,
   "scripts": {
